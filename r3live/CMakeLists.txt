@@ -11,7 +11,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 add_definitions(-DROOT_DIR=\"${CMAKE_CURRENT_SOURCE_DIR}/\")
 
 # Add OpenCV if available
-# set(OpenCV_DIR "/home/zivlin/opt/opencv/build")
+set(OpenCV_DIR "/home/ubuntu/Agroscope/Others/opencv-3.4.16/build")
 FIND_PACKAGE(Boost REQUIRED COMPONENTS filesystem iostreams program_options system serialization)
 if(Boost_FOUND)
 	INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIRS})
@@ -55,7 +55,7 @@ if(OpenMVS_FOUND)
 	add_definitions(${OpenMVS_DEFINITIONS})
 endif()
 
-# message(WARNING "OpenCV_VERSION: ${OpenCV_VERSION}")
+message(WARNING "OpenCV_VERSION: ${OpenCV_VERSION}")
 
 include_directories(${catkin_INCLUDE_DIRS})
 
@@ -82,7 +82,7 @@ include_directories(
 catkin_package()
 
 message(STATUS "===== ${PROJECT_NAME}: OpenCV library status: =====")
-message(STATUS "===== OpenCV ersion: ${OpenCV_VERSION}  =====")
+message(STATUS "===== OpenCV version: ${OpenCV_VERSION}  =====")
 message(STATUS "===== OpenCV libraries: ${OpenCV_LIBS} =====")
 message(STATUS "===== OpenCV include path: ${OpenCV_INCLUDE_DIRS} =====")
 
